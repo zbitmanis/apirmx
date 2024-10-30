@@ -140,7 +140,7 @@ func getUpstream (apiAminURL string, apiKeyName string, apiKey string, apiUpstre
    return aupstream, nil
 }
 
-func getEnrichedRoutes(apiAminURL string, apiKeyName string, apiKey string)(resp apiRoutes, err error) {
+func GetEnrichedRoutes(apiAminURL string, apiKeyName string, apiKey string)(resp apiRoutes, err error) {
   aroutes,err := getRoutes (apiAminURL , apiKeyName , apiKey)
   const  cClusterName="cluster.local" 
   if err != nil {
@@ -166,7 +166,7 @@ func getEnrichedRoutes(apiAminURL string, apiKeyName string, apiKey string)(resp
 
 }
 
-func patchRouteHost (apiAminURL string, apiKeyName string, apiKey string, apiRouteKey string, apiHost string) (err error) {
+func PatchRouteHost (apiAminURL string, apiKeyName string, apiKey string, apiRouteKey string, apiHost string) (err error) {
    var url=apiAminURL+"/apisix/admin/routes/"+apiRouteKey
 
    value := make(map[string]map[string]map[string]string)
@@ -207,7 +207,7 @@ func patchRouteHost (apiAminURL string, apiKeyName string, apiKey string, apiRou
    return nil
 }
 
-func inspectRoutes (apiAminURL string, apiKeyName string, apiKey string)(resp apiRoutes, err error) {
+func InspectRoutes (apiAminURL string, apiKeyName string, apiKey string)(resp apiRoutes, err error) {
   aroutes,err := getRoutes (apiAminURL , apiKeyName , apiKey)
   
   if err != nil {
